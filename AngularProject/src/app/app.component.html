@@ -1,0 +1,23 @@
+<form #searchForm="ngForm" (ngSubmit)="processSearch(searchForm)">
+  <div class="form-group col-md-4">
+    <label>Username</label>
+    <input type="text" name="username" class="form-control" placeholder="input your username here..." required ngModel/>
+  </div>
+  <div class="form-group col-md-4">
+    <label>Search</label>
+    <input type="text" name="searchString" class="form-control" placeholder="input something here..." required ngModel/>
+  </div>
+  <div class="form-group col-md-4">
+    <label>Number</label>
+    <input type="range" name="number" class="form-control"  min="1" max="10" step="1" value="5" ngModel/>
+  </div>
+  <div class="form-group col-md-4">
+    <button type="reset" class="btn btn-danger">Clear</button>
+    <button type="submit" class="btn btn-success" [disabled]="searchForm.invalid">Search</button>
+    <button type="button" class="btn btn-primary" (click)="retrieveFavorite(searchForm)">Get Favorite</button>
+  </div>
+</form>
+<br>
+<div *ngFor="let m of modelList">
+  <app-display-gifs [model]="m" [username]="username"></app-display-gifs>
+</div>

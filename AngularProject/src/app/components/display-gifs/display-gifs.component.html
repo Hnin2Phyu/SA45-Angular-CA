@@ -1,0 +1,20 @@
+<form #addToFavoriteForm="ngForm" (ngSubmit)="addToFavorite(addToFavoriteForm)" class="container-fluid">
+  <div class="card" style="width: 20rem;">
+    <input type="hidden" name="username" [value]="username"/>
+    <input type="hidden" name="gifURL" [value]="model.gifURL"/>
+    <img class="card-img-top" [src]="model.gifURL" alt="Card image cap">
+    <div class="card-body">
+      <input type="hidden" name="title" [value]="model.title"/>
+      <h5 class="card-title">{{model.title}}</h5>
+      <input type="hidden" name="author" [value]="model.author"/>
+      <p *ngIf="model.author.length > 0" class="card-text">
+        <label class="col-xs-4">Author:</label>
+        <label class="col-xs-8">{{model.author}}</label>
+      </p>
+      <div *ngIf="model.favorite != true">
+        <button type="submit" class="btn btn-primary">Add To Favorite</button>
+      </div>
+    </div>
+  </div>
+</form>
+<br>

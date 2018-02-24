@@ -11,5 +11,5 @@ User Manual:
       then Click "Search"
     2. Click "Add Favourite" button, to save the Gif that you like to see next time
     3. When you click "Get Favourite" button, show the Gif that you "Add Favourite"
-    4. You can also clear the Gif that you would like to clear by clicking "Clear" button
+    4. You can also clear username, serach item, and number.
 
